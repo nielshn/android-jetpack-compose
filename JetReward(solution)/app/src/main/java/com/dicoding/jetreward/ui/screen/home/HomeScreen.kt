@@ -9,6 +9,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.dicoding.jetreward.di.Injection
@@ -25,17 +26,12 @@ fun HomeScreen(
     ),
     navigateToDetail: (Long) -> Unit,
 ) {
-//    Box(
-//        modifier = modifier.fillMaxSize(),
-//        contentAlignment = Alignment.Center,
-//    ) {
-//        Text(stringResource(R.string.menu_home))
-//    }
     viewModel.uiState.collectAsState(initial = UiState.Loading).value.let { uiState ->
         when (uiState) {
             is UiState.Loading -> {
                 viewModel.getAllRewards()
             }
+
             is UiState.Success -> {
                 HomeContent(
                     orderReward = uiState.data,
@@ -43,6 +39,7 @@ fun HomeScreen(
                     navigateToDetail = navigateToDetail,
                 )
             }
+
             is UiState.Error -> {}
         }
     }
@@ -59,7 +56,7 @@ fun HomeContent(
         contentPadding = PaddingValues(16.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
-        modifier = modifier
+        modifier = modifier.testTag("RewardList")
     ) {
         items(orderReward) { data ->
             RewardItem(

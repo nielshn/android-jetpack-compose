@@ -5,13 +5,19 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="detailContent_isDisplayed()">
+      <SelectionState runConfigName="DetailContentTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="increaseProduct_buttonEnabled()">
+      <SelectionState runConfigName="JetRewardAppTest">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="increaseProduct_corretCounter()">
+      <SelectionState runConfigName="navHost_clickItem_navigatesToDetailWithData()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="navHost_bottomNavigation_working()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="navHost_checkout_rightBackStack()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
